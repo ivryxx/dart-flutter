@@ -54,38 +54,72 @@
 //   }
 // }
 
-class Player {
-  final String name;
-  int xp, age;
-  String team;
+// class Player {
+//   final String name;
+//   int xp, age;
+//   String team;
 
-  Player({
-    required this.name, 
-    required this.xp,
-    required this.team,
-    required this.age,
-    });
+//   Player({
+//     required this.name, 
+//     required this.xp,
+//     required this.team,
+//     required this.age,
+//     });
 
-    Player.createBluePlayer({required String name, required int age}) : 
-    this.age = age,
-    this.name = name,
-    this.team = 'blue',
-    this.xp = 0;
+//   Player.createBluePlayer({
+//     required String name, 
+//     required int age,
+//     }) : this.age = age,
+//          this.name = name,
+//          this.team = 'blue',
+//          this.xp = 0;           //property 초기화하는 부분
 
+//   Player.createRedPlayer(String name, int age) 
+//       : this.age = age,
+//         this.name = name,
+//         this.team = 'red',
+//         this.xp = 0; 
+       
 
+//   void sayHello() {
+//     print("Hi my name is $name");
+//   }
+// }
 
-  void sayHello() {
-    print("Hi my name is $name");
+// void main() {
+//   var player = Player.createBluePlayer(
+//     name: "nico",
+//     age: 21,
+//   );
+//   var redPlayer = Player.createRedPlayer(
+//     name:"lynn", 
+//     age:12,
+//     );
+// }
+
+class Strong {
+  final double strengthLevel = 1500.99;
+}
+
+class QuickRunner {
+  void runQuick() {
+    print("ruuuuuun!");
   }
 }
 
-void main() {
-  var player = Player.createBluePlayer(
-    name: "nico",
-    age: 21,
-  );
-  var redPlayer = Player.createRedPlayer(
-    name:"lynn", 
-    age:12,
-    );
+class Tall {
+  final double height = 1.99;
 }
+
+enum Team { blue, red } 
+class Player with Strong, QuickRunner, Tall {
+  final Team team;
+
+  Player({
+    required this.team,
+  });
+}
+
+class Horse with Strong, QuickRunner {}
+
+class Kid with Tall {}
